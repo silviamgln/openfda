@@ -23,11 +23,12 @@ conn.close()
 
 
 esquema_json = json.loads(codigo_json)
-#la libreria json nos carga el archivo "en crudo"
+#la libreria json nos carga el archivo "en crudo" modo diccionarios y listas
 medicamento_info=esquema_json['results'][0]
-
+#variable dentro de la carpeta results del json
 
 print ('ID: ', medicamento_info['id'])
+#buscamos la etiqueta 'id'
 print ('Purpose: ',medicamento_info['purpose'][0])
 
 print ('Manufacture: ',medicamento_info['openfda']['manufacturer_name'][0])
