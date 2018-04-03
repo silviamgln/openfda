@@ -12,7 +12,7 @@ r1 = conn.getresponse()
 print(r1.status, r1.reason)
 codigo_json = r1.read().decode("utf-8")
 #leemos el contenido y lo metemos en una variable
-#cerramos la conexión
+#cerramos la conexión con openfda
 conn.close()
 
 #el modulo json nos carga el archivo como diccionarios y listas
