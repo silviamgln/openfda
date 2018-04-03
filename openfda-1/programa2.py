@@ -12,7 +12,7 @@ codigo_json = r1.read().decode("utf-8")
 conn.close()
 
 esquema_json = json.loads(codigo_json)
-#recorremos cada elemento de la lista de los valores de la clave 'results'
+#recorremos cada elemento de la lista de los valores de la clave "results"
 for i in range(len (esquema_json['results'])):
     medicamento_info=esquema_json['results'][i]
     #imprimimos el id de cada medicamento
