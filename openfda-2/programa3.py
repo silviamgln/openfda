@@ -5,6 +5,8 @@ headers = {'User-Agent': 'http-client'}
 
 conn = http.client.HTTPSConnection("api.fda.gov")
 conn.request("GET", '/drug/label.json?limit=100&search=substance_name:"ASPIRIN"', None, headers)
+#la petición va cambiando porque cambia el num de cosas que quieres pedir
+#Dame 100 relacionados con la aspirina y sáltate los 0 primeros (el skip)
 r1 = conn.getresponse()
 print(r1.status, r1.reason)
 codigo_json = r1.read().decode("utf-8")
