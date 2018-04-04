@@ -28,6 +28,7 @@ while True:
 
     #Si se cumple esta condición el bucle while se para
     if (len(esquema_json['results'])<100):
+        print("No hay más medicamentos que contengan aspirina")
         break
     skip_num=skip_num+100
 
