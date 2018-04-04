@@ -4,7 +4,7 @@ import http.client
 import json
 
 #Puerto donde lanzamos el servidor
-PORT = 8001
+PORT = 8004
 
 def dame_lista():
     lista = []
@@ -52,9 +52,10 @@ print("serving at port", PORT)
 try:
     httpd.serve_forever()
 except KeyboardInterrupt:
+    print("El usuario ha interrumpido el servicio")
     pass
 
 httpd.server_close()
 print("")
-print("Server stopped!")
+print("Servicio parado")
 
