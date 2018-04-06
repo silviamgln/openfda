@@ -4,7 +4,7 @@ import http.client
 import json
 
 #Puerto donde lanzamos el servidor
-PORT = 8004
+PORT = 8006
 
 def dame_lista():
     lista = []
@@ -36,11 +36,11 @@ class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
         #al cliente, que será html
         self.send_header('Content-type', 'text/html')
         self.end_headers()
-        content="<html><body>"
+        content="<html><body style='background-color:red'><u><h1>LISTADO DE MEDICAMENTOS:</h2>"
         lista=dame_lista ()
         for e in lista:
-            content += e+"<br>"
-        content+="</body></html>"
+            content += "<li>"+e +"<br>"
+        content+="</body></html></u></li>"
         self.wfile.write(bytes(content, "utf8"))
         return
 
