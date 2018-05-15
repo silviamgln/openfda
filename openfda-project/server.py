@@ -223,11 +223,12 @@ class testHTTPRequestHandler(http.server.BaseHTTPRequestHandler):
 
         #302 se utiliza para que devuelva una pag y una localización a la nueva pag web
         elif 'redirect' in self.path:
-            self.send_error(302)
+            print("Mandamos la redirección a la main page")
+            self.send_response(301)
             self.send_header('Location', 'http://localhost:'+str(PORT))
             self.end_headers()
         elif 'secret' in self.path:
-            self.send_error(401)
+            self.send_response(401)
             self.send_header('WWW-Authenticate', 'Basic realm="Mi servidor"')
             self.end_headers()
         else:
